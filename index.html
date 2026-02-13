@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>San Valentín 2026 💌</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="💌 San Valentín 2026 - Para Nallely">
+  <meta property="og:description" content="Una sorpresa especial hecha con amor 💖">
+  <meta property="og:image" content="https://rosselveth.github.io/san-valentin-nallely/preview.jpg">
+  <meta property="og:url" content="https://rosselveth.github.io/san-valentin-nallely/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="description" content="Una preguntita especial para mi Nai" />
+  <meta name="theme-color" content="#0b1020" />
+  <style>
+    :root{
+      --bgA:#070a12;
+      --bgB:#0b1a44;
+      --pink:#ff4fa3;
+      --pink2:#ff2d7d;
+      --violet:#7c3aed;
+      --ice:#eaf2ff;
+      --muted:rgba(234,242,255,.78);
+      --glass:rgba(255,255,255,.08);
+      --stroke:rgba(255,255,255,.14);
+      --shadow: 0 20px 70px rgba(0,0,0,.55);
+      --r:22px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ice);
+      overflow:hidden;
+      background: radial-gradient(1200px 800px at 20% 15%, rgba(255,79,163,.22), transparent 60%),
+                  radial-gradient(900px 700px at 80% 25%, rgba(124,58,237,.22), transparent 60%),
+                  linear-gradient(135deg, var(--bgA), var(--bgB));
+      transition: background 600ms ease;
+    }
+
+    /* MODO CELEBRACIÓN */
+    body.celebration{
+      background:
+        radial-gradient(1200px 800px at 20% 15%, rgba(255,79,163,.35), transparent 60%),
+        radial-gradient(900px 700px at 80% 25%, rgba(124,58,237,.30), transparent 60%),
+        radial-gradient(900px 700px at 50% 80%, rgba(255,255,255,.10), transparent 60%),
+        linear-gradient(135deg, #050712, #0b1a44);
+    }
+    .card.celebration{
+      border: 1px solid rgba(255,79,163,.35);
+      box-shadow: 0 22px 90px rgba(255,79,163,.18), 0 22px 90px rgba(0,0,0,.55);
+      transform: translateY(-2px);
+    }
+    .card.celebration .shine{
+      opacity: .85;
+      filter: blur(6px);
+    }
+
+    /* Glow blobs */
+    .blob{
+      position:fixed;
+      width:520px; height:520px;
+      filter: blur(55px);
+      opacity:.55;
+      z-index:0;
+      border-radius:50%;
+      animation: drift 12s ease-in-out infinite;
+      transform: translate3d(0,0,0);
+      pointer-events:none;
+    }
+    .blob.one{ left:-140px; top:-160px; background: radial-gradient(circle, rgba(255,79,163,.85), rgba(255,79,163,0) 60%); }
+    .blob.two{ right:-180px; top:30px; background: radial-gradient(circle, rgba(124,58,237,.9), rgba(124,58,237,0) 60%); animation-duration: 14s;}
+    .blob.three{ left:25%; bottom:-220px; background: radial-gradient(circle, rgba(0,190,255,.65), rgba(0,190,255,0) 62%); animation-duration: 16s;}
+    @keyframes drift{
+      0%,100%{ transform: translate3d(0,0,0) scale(1); }
+      50%{ transform: translate3d(30px,-18px,0) scale(1.08); }
+    }
+
+    /* Floating hearts layer */
+    .hearts{
+      position:fixed; inset:0;
+      z-index:1;
+      pointer-events:none;
+      overflow:hidden;
+    }
+    .heart{
+      position:absolute;
+      bottom:-10vh;
+      font-size: 18px;
+      opacity:.0;
+      filter: drop-shadow(0 10px 16px rgba(255,79,163,.25));
+      animation: floatUp linear forwards;
+    }
+    @keyframes floatUp{
+      0%{ transform: translateY(0) translateX(0) scale(.9) rotate(0deg); opacity:0; }
+      10%{ opacity:.9; }
+      100%{ transform: translateY(-120vh) translateX(var(--dx)) scale(1.25) rotate(var(--rot)); opacity:0; }
+    }
+
+    /* Center layout */
+    .wrap{
+      position:relative;
+      z-index:2;
+      height:100%;
+      display:grid;
+      place-items:center;
+      padding: 22px;
+    }
+
+    .card{
+      width: min(560px, 100%);
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.06));
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      overflow:hidden;
+      position:relative;
+      transition: box-shadow 450ms ease, border 450ms ease, transform 450ms ease;
+    }
+
+    /* Card top sparkle strip */
+    .shine{
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(1000px 220px at 10% 0%, rgba(255,255,255,.18), transparent 60%),
+        radial-gradient(800px 240px at 85% 0%, rgba(255,255,255,.14), transparent 55%),
+        linear-gradient(90deg, rgba(255,79,163,.18), rgba(124,58,237,.18), rgba(0,190,255,.16));
+      opacity:.55;
+      filter: blur(8px);
+      pointer-events:none;
+    }
+
+    .content{
+      padding: 26px 22px 20px;
+      position:relative;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: rgba(234,242,255,.86);
+      font-size: 13px;
+      letter-spacing:.3px;
+    }
+    .badge .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: linear-gradient(180deg, var(--pink), var(--pink2));
+      box-shadow: 0 0 14px rgba(255,79,163,.55);
+    }
+
+    h1{
+      margin: 14px 0 6px;
+      font-size: 30px;
+      line-height:1.15;
+      letter-spacing:.2px;
+    }
+    .name{
+      background: linear-gradient(90deg, #fff, #ffd1e8 35%, #cfe6ff 70%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color: transparent;
+      font-weight: 900;
+    }
+    .sub{
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 14.5px;
+    }
+
+    .qbox{
+      margin-top: 12px;
+      padding: 18px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.16);
+    }
+    .question{
+      font-size: 22px;
+      margin: 0 0 6px;
+      transition: opacity 200ms ease;
+    }
+    .hint{
+      margin:0;
+      color: rgba(234,242,255,.72);
+      font-size: 13px;
+      transition: opacity 200ms ease;
+    }
+
+    .btns{
+      display:flex;
+      gap:12px;
+      margin-top: 16px;
+      flex-wrap:wrap;
+    }
+
+    button{
+      border:0;
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 18px;
+      font-weight: 800;
+      font-size: 15.5px;
+      cursor:pointer;
+      transition: transform .08s ease, filter .12s ease, box-shadow .12s ease;
+      outline:none;
+      box-shadow: 0 12px 28px rgba(0,0,0,.35);
+      -webkit-tap-highlight-color: transparent;
+      user-select:none;
+    }
+    @media (min-width: 520px){
+      button{ width: calc(50% - 6px); }
+    }
+    button:active{ transform: translateY(1px) scale(.99); }
+
+    .yes{
+      color:white;
+      background: linear-gradient(180deg, rgba(34,197,94,1), rgba(22,163,74,1));
+    }
+    .yes:hover{ filter: brightness(1.04); }
+
+    .no{
+      color:white;
+      background: linear-gradient(180deg, rgba(255,79,163,1), rgba(255,45,125,1));
+    }
+    .no:hover{ filter: brightness(1.04); }
+
+    .msg{
+      margin-top: 14px;
+      padding: 14px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      display:none;
+    }
+    .msg.show{ display:block; }
+    .msg h2{
+      margin: 0 0 6px;
+      font-size: 20px;
+    }
+    .msg p{
+      margin: 0;
+      color: rgba(234,242,255,.82);
+      line-height:1.45;
+    }
+
+    .footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding: 14px 18px 18px;
+      color: rgba(234,242,255,.72);
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.10);
+    }
+    .sig strong{ color: rgba(234,242,255,.92); }
+
+    /* confetti */
+    .confetti{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index: 10;
+      overflow:hidden;
+    }
+    .piece{
+      position:absolute;
+      top:-10vh;
+      will-change: transform, opacity;
+      animation: fall linear forwards;
+      filter: drop-shadow(0 10px 12px rgba(0,0,0,.25));
+    }
+    @keyframes fall{
+      0%{ transform: translateY(0) translateX(0) rotate(0deg); opacity:0; }
+      10%{ opacity:1; }
+      100%{ transform: translateY(120vh) translateX(var(--dx)) rotate(var(--rot)); opacity:0; }
+    }
+
+    /* Reduced motion respect */
+    @media (prefers-reduced-motion: reduce){
+      .blob, .heart, .piece{ animation: none !important; }
+      body{ transition:none; }
+      .card{ transition:none; }
+      .question,.hint{ transition:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="blob one"></div>
+  <div class="blob two"></div>
+  <div class="blob three"></div>
+
+  <div class="hearts" id="hearts"></div>
+  <div class="confetti" id="confetti"></div>
+
+  <div class="wrap">
+    <main class="card" aria-live="polite">
+      <div class="shine"></div>
+
+      <div class="content">
+        <div class="badge"><span class="dot"></span> San Valentín 2026 💌</div>
+
+        <h1>Para <span class="name" id="name">Nallely Luevano</span> ✨</h1>
+        <p class="sub" id="subtitle">Una preguntita rápida… pero con todo mi corazón. 💖</p>
+
+        <section class="qbox">
+          <p class="question" id="question">¿Quieres ser mi San Valentín?</p>
+          <p class="hint" id="hint">Toca una opción, mi amor 😊</p>
+
+          <div class="btns" id="buttons">
+            <button class="yes" id="btnYes">Sí 💘</button>
+            <button class="no" id="btnNo">No 🙈</button>
+          </div>
+
+          <div class="msg" id="message"></div>
+        </section>
+      </div>
+
+      <div class="footer">
+        <div class="sig">Att: <strong>Mario Rosselveth</strong></div>
+        <div>❤</div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const NAME = "Nallely Luevano";
+
+    const state = {
+      tries: 0,
+      prompts: [
+        { q: "¿Segura, mi amor? 🥺 ¿Quieres ser mi San Valentín?", h: "Prometo consentirte muchísimo." },
+        { q: "Ándaleeee 🙈 ¿Sí quieres ser mi San Valentín?", h: "Te invito tu postrecito favorito 😋" },
+        { q: "Ok ok… última oportunidad 😄 ¿Quieres ser mi San Valentín?", h: "Yo ya dije que sí a ti 💖" },
+        { q: "Yo sé que sí 😍 ¿Aceptas ser mi San Valentín?", h: "Di que sí y te lleno de besos 😚" }
+      ]
+    };
+
+    const qEl = document.getElementById("question");
+    const hEl = document.getElementById("hint");
+    const msgEl = document.getElementById("message");
+    const btnsEl = document.getElementById("buttons");
+    const hearts = document.getElementById("hearts");
+    const confetti = document.getElementById("confetti");
+    const subtitleEl = document.getElementById("subtitle");
+    const cardEl = document.querySelector(".card");
+
+    document.getElementById("name").textContent = NAME;
+
+    function showMessage(title, text){
+      msgEl.classList.add("show");
+      msgEl.innerHTML = `<h2>${title}</h2><p>${text}</p>`;
+    }
+    function hideMessage(){
+      msgEl.classList.remove("show");
+      msgEl.innerHTML = "";
+    }
+
+    // Floating hearts (ambient)
+    const heartEmojis = ["💖","💘","💞","✨","🌸","💗"];
+    function spawnHeart(){
+      const s = document.createElement("span");
+      s.className = "heart";
+      s.textContent = heartEmojis[Math.floor(Math.random()*heartEmojis.length)];
+      s.style.left = Math.random()*100 + "vw";
+      s.style.setProperty("--dx", (Math.random()*2-1)*120 + "px");
+      s.style.setProperty("--rot", (Math.random()*2-1)*220 + "deg");
+      s.style.animationDuration = (6 + Math.random()*5) + "s";
+      s.style.opacity = "0";
+      hearts.appendChild(s);
+      setTimeout(()=> s.remove(), 12000);
+    }
+    setInterval(spawnHeart, 650);
+    for(let i=0;i<10;i++) setTimeout(spawnHeart, i*250);
+
+    function burstConfetti(){
+      const pieces = ["💖","✨","💘","🌸","💞","🥰"];
+      for(let i=0;i<40;i++){
+        const p = document.createElement("span");
+        p.className = "piece";
+        p.textContent = pieces[Math.floor(Math.random()*pieces.length)];
+        p.style.left = Math.random()*100 + "vw";
+        p.style.fontSize = (14 + Math.random()*18) + "px";
+        p.style.setProperty("--dx", (Math.random()*2-1)*180 + "px");
+        p.style.setProperty("--rot", (Math.random()*2-1)*360 + "deg");
+        p.style.animationDuration = (1.7 + Math.random()*0.7) + "s";
+        confetti.appendChild(p);
+        setTimeout(()=> p.remove(), 2600);
+      }
+    }
+
+    // Extra: tormenta de corazones al decir "Sí"
+    function heartStorm(){
+      let n = 0;
+      const t = setInterval(() => {
+        for(let i=0;i<3;i++) spawnHeart();
+        n++;
+        if(n > 12) clearInterval(t);
+      }, 140);
+    }
+
+    // NO flow: 1er NO muestra "Mmm..."; desde el 2º NO ya no muestra mensaje abajo
+    const btnNo = document.getElementById("btnNo");
+
+    btnNo.addEventListener("click", () => {
+      state.tries++;
+      const idx = (state.tries - 1) % state.prompts.length;
+
+      // Animación suave de cambio
+      qEl.style.opacity = "0";
+      hEl.style.opacity = "0";
+
+      setTimeout(() => {
+        qEl.textContent = state.prompts[idx].q;
+        hEl.textContent = state.prompts[idx].h;
+        qEl.style.opacity = "1";
+        hEl.style.opacity = "1";
+      }, 200);
+
+      if (state.tries === 1) {
+        showMessage(
+          "Mmm... 🤨",
+          "¿Estás segura? Porque yo solo quiero pasar este San Valentín contigo 💖"
+        );
+      } else {
+        hideMessage();
+      }
+
+      // Hace el botón NO más pequeño cada vez
+      const scale = Math.max(0.6, 1 - state.tries * 0.1);
+      btnNo.style.transform = `scale(${scale})`;
+    });
+
+    // YES flow: big reveal + modo celebración + ocultar subtítulo
+    document.getElementById("btnYes").addEventListener("click", () => {
+      if (subtitleEl) subtitleEl.style.display = "none";   // quita "Una preguntita rápida…"
+      hideMessage();                                       // limpia lo de abajo si existía
+
+      // activa modo celebración
+      document.body.classList.add("celebration");
+      if (cardEl) cardEl.classList.add("celebration");
+
+      qEl.textContent = "¡Siiii! 🥰";
+      hEl.textContent = "Sabía que eras tú 💖";
+      btnsEl.style.display = "none";
+
+      showMessage("Feliz San Valentín mi amor 💘", "¡Te amo!");
+      burstConfetti();
+      setTimeout(burstConfetti, 250);
+      setTimeout(burstConfetti, 500);
+      heartStorm();
+    });
+  </script>
+</body>
+</html>
